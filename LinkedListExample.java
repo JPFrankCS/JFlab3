@@ -26,7 +26,7 @@ class LinkedList {
      * Adds the value to the _end_ of the list
      * @param value
      */
-    public void append(int value) {
+    public void append(int value) { //good
         if(this.root == null) {
             this.root = new Node(value, null);
             return;
@@ -39,20 +39,21 @@ class LinkedList {
         }
         // Otherwise, loop until the end and add at the end with a null
         while(n.next != null) {
-            n = n.next;
-            n.next = new Node(value, null);
-        }
+            n = n.next;}
+        n.next = new Node(value, null);
+        
     }
     /**
      * @return the value of the first element in the list
      */
-    public int first() {
+    public int first() { //good
+        //must handle empty list
         return this.root.value;
     }
     /**
      * @return the value of the last element in the list
      */
-    public int last() {
+    public int last() { //good
         Node n = this.root;
         // If no such element, throw an exception
         if(n == null) { throw new NoSuchElementException(); }
@@ -67,7 +68,7 @@ class LinkedList {
     /**
      * @return a string representation of the list
      */
-    public String toString() {
+    public String toString() { //good
         Node n = this.root;
         String s = "";
         while(n != null) {
@@ -79,7 +80,7 @@ class LinkedList {
     /**
      * @return the number of elements in the list
      */
-    public int length() {
+    public int length() { //good
         Node n = this.root;
         int i = 0;
         while(n != null) {
@@ -88,4 +89,4 @@ class LinkedList {
         }
         return i;
     }
-}
+} 
