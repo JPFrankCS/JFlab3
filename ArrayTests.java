@@ -8,6 +8,24 @@ public class ArrayTests {
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(new int[]{ 3 }, input1);
 	}
+  @Test 
+	public void testReverseInPlaceOdd() {
+    int[] input1 = { 3 , 4, 5 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 5,4,3 }, input1);
+	}
+  @Test 
+	public void testReverseInPlaceEven() {
+    int[] input1 = { 3, 4 , 5, 6 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 6,5,4,3 }, input1);
+	}
+  @Test 
+	public void testReverseInPlaceEmpty() {
+    int[] input1 = { };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ }, input1);
+	}
 
 
   @Test
@@ -15,4 +33,20 @@ public class ArrayTests {
     int[] input1 = { };
     assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
   }
+  @Test
+  public void testReversedOdd() {
+    int[] input1 = {5,6,7 };
+    assertArrayEquals(new int[]{7,6,5 }, ArrayExamples.reversed(input1));
+  }
+  @Test
+  public void testReversedEven() {
+    int[] input1 = {5,6,7,8 };
+    assertArrayEquals(new int[]{ 8,7,6,5}, ArrayExamples.reversed(input1));
+  }
+  @Test
+  public void testReversedSingle() {
+    int[] input1 = {8 };
+    assertArrayEquals(new int[]{8 }, ArrayExamples.reversed(input1));
+  }
 }
+
